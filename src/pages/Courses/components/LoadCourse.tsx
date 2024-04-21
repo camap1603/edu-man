@@ -5,6 +5,8 @@ import { registerCourse } from "../hooks/registerCourse";
 import { AuthContext } from "../../../context/AuthContext";
 import { loadUser } from "../../../utils/loadUser";
 
+
+
 const LoadCourseButton: React.FC<{
   courseCode: string;
   userId: string;
@@ -70,6 +72,9 @@ const LoadCourse = () => {
       registerCourse(course.courseCode, teacherId, currentUser?.uid);
     }
   };
+
+ 
+
   const role = localStorage.getItem("role");
   const userId = localStorage.getItem("userId");
 
@@ -85,7 +90,6 @@ const LoadCourse = () => {
                   code: {course.courseCode} - credit: {course.credit}
                 </span>
                 <h4>{course.courseName}</h4>
-                <p>{course.schedule}</p>
                 <span>
                   <b>Lecturer:</b> {course.teacher}
                 </span>
